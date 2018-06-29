@@ -1,0 +1,63 @@
+# Generic OAUTH2 / Keycloak
+# Keycloak clientId
+# Keycloak Secret
+# Info: Need to set in Keycloak: client access type to 'confidential'
+# ClientSecret taken from Keycloak Client Configuration --> credentials
+security:
+  oauth2:
+    client:
+      clientId: YOUR_CLIENT_ID
+      clientSecret: YOUR_CLIENT_SECRET
+      accessTokenUri: https://YOUR.KEYCLOAK.SERVER/auth/realms/YOUR_KEYCLOAK_REALM/protocol/openid-connect/token
+      userAuthorizationUri: https://YOUR.KEYCLOAK.SERVER/auth/realms/YOUR_KEYCLOAK_REALM/protocol/openid-connect/auth
+    resource:
+      user-info-uri: https://YOUR.KEYCLOAK.SERVER/auth/realms/YOUR_KEYCLOAK_REALM/protocol/openid-connect/userinfo
+
+# It is possible to override the configuration using environment variables as well:
+# SECURITY_OAUTH2_CLIENT_CLIENTID=YOUR_CLIENT_ID
+# SECURITY_OAUTH2_CLIENT_CLIENTSECRET=YOUR_CLIENT_SECRET
+# SECURITY_OAUTH2_CLIENT_ACCESSTOKENURI=YOUR_ACCESS_TOKEN_URI
+# SECURITY_OAUTH2_CLIENT_USERAUTHORIZATIONURI=YOUR_USER_AUTHORIZATION_URI
+# SECURITY_OAUTH2_RESOURCE_USER_INFO_URI=YOUR_RESOURCE_USER_INFO_URI
+
+
+# FACEBOOK OAUTH2
+#security:
+#  oauth2:
+#    client:
+#      clientId: YOUR_CLIENT_ID
+#      clientSecret: YOUR_CLIENT_SECRET
+#      accessTokenUri: https://graph.facebook.com/oauth/access_token
+#      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+#      tokenName: oauth_token
+#      authenticationScheme: query
+#      clientAuthenticationScheme: form
+#    resource:
+#      userInfoUri: https://graph.facebook.com/me
+
+# GITHUB OAUTH2
+#security:
+#  oauth2:
+#    client:
+#        clientId: YOUR_CLIENT_ID
+#        clientSecret: YOUR_CLIENT_SECRET
+#        accessTokenUri: https://github.com/login/oauth/access_token
+#        userAuthorizationUri: https://github.com/login/oauth/authorize
+#        clientAuthenticationScheme: form
+#      resource:
+#        userInfoUri: https://api.github.com/user
+
+# GOOGLE OAUTH2
+#security:
+#  oauth2:
+#    client:
+#      clientId: YOUR_CLIENT_ID
+#      clientSecret: YOUR_CLIENT_SECRET
+#      accessTokenUri: https://www.googleapis.com/oauth2/v3/token
+#      userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+#      authenticationScheme: query
+#      scope:
+#        - email
+#        - profile
+#    resource:
+#      userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
